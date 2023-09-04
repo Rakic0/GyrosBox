@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+
+  @media only screen and (max-width: 64em) {
+    font-size: calc(100vw / 1024 * 10);
+  }
+
+  @media only screen and (max-width: 46.87em) {
+    font-size: calc(100vw / 750 * 10);
+  }
+}
+
+// Lenis
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}

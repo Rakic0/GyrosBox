@@ -1,0 +1,70 @@
+.footer {
+  width: 100%;
+  height: 29rem;
+  background-color: $dreamless-sleep;
+
+  & .col-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6.2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  & .col-2 {
+    max-width: 110rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      color: $white;
+      @extend %description-11;
+    }
+  }
+
+  & hr {
+    max-width: 110rem;
+    height: 1px;
+    border-color: $jet;
+  }
+
+  &__logo {
+    width: 17.8rem;
+  }
+
+  & .netrunners {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    span {
+      font-size: 1.3rem;
+      font-family: "MADE SAONARA", serif;
+      font-style: italic;
+      color: $white;
+    }
+
+    img {
+      width: 20rem;
+    }
+  }
+
+  a {
+    @extend %description-17;
+    color: $white;
+    text-decoration: none;
+    margin-bottom: 1rem;
+
+    &:first-of-type {
+      color: $vivid-vermilion;
+    }
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import "./base/reset.scss";
+
+@import "./utils/variables.scss";
+@import "./utils/functions.scss";
+
+@import "./shared/descriptions.scss";
+@import "./shared/titles.scss";
+@import "./shared/link.scss";
+
+@import "./base/fonts.scss";
+@import "./base/base.scss";
+
+@import "./layout/navigation.scss";
+@import "./layout/footer.scss";
+
+@import "./pages/home.scss";

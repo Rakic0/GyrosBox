@@ -1,0 +1,32 @@
+a.link {
+  @extend %title-50;
+
+  display: block;
+  overflow: hidden;
+  color: $white;
+  text-decoration: none;
+
+  & .container {
+    display: block;
+  }
+
+  & .container span {
+    display: inline-block;
+    transition: opacity 0.4s cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  & .container:last-of-type span {
+    color: $vivid-vermilion;
+    opacity: 0;
+  }
+
+  &:hover .container:first-of-type span {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  &:hover .container:last-of-type span {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
