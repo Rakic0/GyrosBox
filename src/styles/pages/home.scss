@@ -79,10 +79,7 @@
   &__dostava {
   }
 
-  &__title {
-    @extend %description-13;
-    color: $vivid-vermilion;
-    text-transform: uppercase;
+  & .mini__title {
     margin-bottom: 2rem;
   }
 
@@ -92,13 +89,7 @@
     }
   }
 
-  // &__imgs div {
-  //   width: 27.4rem;
-  //   height: 18.3rem;
-  //   overflow: hidden;
-  // }
-
-  [data-img="gyros"] {
+  [data-img="gyrosR"] {
     width: 27.4rem;
     height: 18.3rem;
     object-fit: cover;
@@ -107,11 +98,11 @@
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 
     transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-      clip-path 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19),
-      -webkit-clip-path 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      clip-path 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19),
+      -webkit-clip-path 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
   }
 
-  [data-img="gyros"].show {
+  [data-img="gyrosR"].show {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     transform: translate3d(0, 0, 0);
 
@@ -119,12 +110,12 @@
     transition-duration: 0.8s;
   }
 
-  [data-img="gyros"].hide {
+  [data-img="gyrosR"].hide {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transform: translate3d(0, 50%, 0);
   }
 
-  [data-img="gyros"].initial {
+  [data-img="gyrosR"].initial {
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 
     transition: clip-path 0s cubic-bezier(0.55, 0.055, 0.675, 0.19),

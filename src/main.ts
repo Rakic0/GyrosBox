@@ -40,7 +40,7 @@ links.forEach((link) => {
 
 const getRandomPositions = () => {
   const top = { min: 10, max: 60, diff: 20 };
-  const left = { min: 10, max: 140, diff: 10 };
+  const left = { min: 10, max: 100, diff: 10 };
 
   const topNumber = getRandomNumber(top);
   const leftNumber = getRandomNumber(left);
@@ -60,14 +60,17 @@ links.forEach((link) => {
     document
       .querySelectorAll(`[data-img="${attribute}"]`)
       .forEach((img, index: number) => {
+        console.log(attribute);
         img.classList.remove("hide", "initial");
         img.classList.add("show");
-        // @ts-ignore
-        img.style.top = `${topNumber[index]}rem`;
-        // @ts-ignore
-        img.style.left = `${leftNumber[index]}rem`;
-        // @ts-ignore
-        img.style.transitionDelay = `${index * 0.1}s`;
+        if (attribute?.charAt(attribute.length - 1) === "R") {
+          // @ts-ignore
+          img.style.top = `${topNumber[index]}rem`;
+          // @ts-ignore
+          img.style.left = `${leftNumber[index]}rem`;
+          // @ts-ignore
+          img.style.transitionDelay = `${index * 0.1}s`;
+        }
       });
   });
 
@@ -96,11 +99,13 @@ window.addEventListener("wheel", () => {
 //  Menu
 
 const ham = document.querySelector(".ham");
+const navMenu = document.querySelector(".nav__menu");
 const item1 = document.querySelector(".item-1");
 const item2 = document.querySelector(".item-2");
 
 ham?.addEventListener("click", () => {
   ham.classList.toggle("active");
+  navMenu?.classList.toggle("active");
   if (ham.classList.contains("active")) {
     item1?.classList.add("active");
     item2?.classList.add("active");
@@ -119,3 +124,5 @@ ham?.addEventListener("click", () => {
     }, 650);
   }
 });
+
+// Navigation image animation
