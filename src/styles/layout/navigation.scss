@@ -48,7 +48,7 @@
   user-select: none;
   width: 3.5rem;
 
-  position: absolute;
+  position: fixed;
   z-index: 102;
   top: 2rem;
   left: 2rem;
@@ -163,7 +163,7 @@
         position: absolute;
         object-fit: cover;
         left: 50%;
-        // top: 21.8vh;
+
         top: 50%;
         transform: translate(-50%, -50%);
       }
@@ -172,7 +172,7 @@
       [data-img="onama"],
       [data-img="instagram"],
       [data-img="tiktok"] {
-        // clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 
         transition: transform 0.8s cubic-bezier(0.55, 0.055, 0.675, 0.19),
           clip-path 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19),
@@ -184,11 +184,10 @@
       [data-img="instagram"].show,
       [data-img="tiktok"].show {
         clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-        transform: translate3d(0, 0, 0);
 
         transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
         transition-duration: 0.8s;
-        transition-delay: 0.1s;
+        transition-delay: 0.2s;
         z-index: 2;
       }
 
@@ -197,7 +196,6 @@
       [data-img="instagram"].hide,
       [data-img="tiktok"].hide {
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-        transform: translate3d(0, 50%, 0);
       }
 
       [data-img="meni"].initial,

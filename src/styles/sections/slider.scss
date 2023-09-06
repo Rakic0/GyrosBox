@@ -1,0 +1,37 @@
+.slider {
+  background-color: $white;
+  max-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+
+  .item-1 {
+    width: 50vw;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .item-2 {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 19rem;
+    text-align: left;
+
+    h3 {
+      @extend %title-44;
+      font-weight: 600;
+      color: $vivid-vermilion;
+      margin-bottom: 4.2rem;
+    }
+
+    p {
+      @extend %description-21;
+      color: $black;
+    }
+  }
+}
