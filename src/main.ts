@@ -39,8 +39,8 @@ links.forEach((link) => {
 // Image animations
 
 const getRandomPositions = () => {
-  const top = { min: 10, max: 60, diff: 20 };
-  const left = { min: 10, max: 100, diff: 10 };
+  const top = { min: 10, max: 50, diff: 20 };
+  const left = { min: 10, max: 100, diff: 15 };
 
   const topNumber = getRandomNumber(top);
   const leftNumber = getRandomNumber(left);
@@ -60,7 +60,6 @@ links.forEach((link) => {
     document
       .querySelectorAll(`[data-img="${attribute}"]`)
       .forEach((img, index: number) => {
-        console.log(attribute);
         img.classList.remove("hide", "initial");
         img.classList.add("show");
         if (attribute?.charAt(attribute.length - 1) === "R") {
@@ -125,4 +124,64 @@ ham?.addEventListener("click", () => {
   }
 });
 
-// Navigation image animation
+// Slider
+
+const slider = document.querySelector(".slider");
+const sliderImages = document.querySelector(".slider .item-1");
+
+let options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.98,
+};
+
+let translate = 0;
+
+const callback: IntersectionObserverCallback = (entries, _observer) => {
+  entries.forEach((entry) => {
+    console.log(entry.isIntersecting);
+    if (entry.isIntersecting) {
+      slider?.scrollIntoView({ behavior: "smooth" });
+      lenis.stop();
+
+      slider?.addEventListener("wheel", handleWheel);
+    } else {
+      lenis.start();
+      slider?.removeEventListener("wheel", handleWheel);
+    }
+  });
+};
+
+// @ts-ignore
+const handleWheel = (e) => {
+  if (e.deltaY > 1) {
+    if (translate < -1750) {
+      translate = -1890;
+      lenis.start();
+      return;
+    }
+
+    translate -= e.deltaY + 10;
+    sliderImages?.setAttribute(
+      "style",
+      `transform: translateY(${translate}px)`
+    );
+  } else {
+    if (translate > -70) {
+      translate = 0;
+      lenis.start();
+      return;
+    }
+
+    translate -= e.deltaY + 10;
+    sliderImages?.setAttribute(
+      "style",
+      `transform: translateY(${translate}px)`
+    );
+  }
+};
+
+let observer = new IntersectionObserver(callback, options);
+
+// @ts-ignore
+observer.observe(slider);
