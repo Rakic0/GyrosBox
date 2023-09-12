@@ -129,6 +129,10 @@
   .item-1 {
     left: 0;
 
+    @media only screen and (max-width: 48em) {
+      width: 100%;
+    }
+
     background-color: $dreamless-sleep;
     transform: translate3d(0, 100%, 0);
 
@@ -143,11 +147,26 @@
 
     .mini__title {
       margin-bottom: 2rem;
+
+      @media only screen and (max-width: 48em) {
+        font-size: 2.2rem;
+        margin-bottom: 4rem;
+      }
+    }
+
+    .link {
+      @media only screen and (max-width: 48em) {
+        font-size: 6.4rem;
+      }
     }
   }
 
   .item-2 {
     right: 0;
+
+    @media only screen and (max-width: 48em) {
+      display: none;
+    }
 
     background-color: $black;
     transform: translate3d(0, -100%, 0);

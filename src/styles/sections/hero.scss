@@ -18,7 +18,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    @media only screen and (max-width: 46.87em) {
+    @media only screen and (max-width: 64em) {
       grid-template-rows: 1fr 1fr;
       grid-template-columns: 1fr;
     }
@@ -28,7 +28,7 @@
       height: 100vh;
       object-fit: cover;
 
-      @media only screen and (max-width: 46.87em) {
+      @media only screen and (max-width: 64em) {
         height: 50vh;
       }
     }

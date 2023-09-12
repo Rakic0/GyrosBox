@@ -23,12 +23,14 @@ a.link {
     opacity: 0;
   }
 
-  &:hover .container:first-of-type span {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  &:hover .container:last-of-type span {
-    transform: translateY(-100%);
-    opacity: 1;
+  @media only screen and (min-width: 64em) {
+    &:hover .container:first-of-type span {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    &:hover .container:last-of-type span {
+      transform: translateY(-100%);
+      opacity: 1;
+    }
   }
 }
