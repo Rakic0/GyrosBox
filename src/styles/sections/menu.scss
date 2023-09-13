@@ -22,9 +22,6 @@
     margin-bottom: 7rem;
   }
 
-  &__dostava {
-  }
-
   & .mini__title {
     margin-bottom: 2rem;
   }
@@ -36,7 +33,8 @@
   }
 
   [data-img="gyrosR"],
-  [data-img="picaR"] {
+  [data-img="picaR"],
+  [data-img="ostaloR"] {
     width: 27.4rem;
     height: 18.3rem;
     object-fit: cover;
@@ -50,7 +48,8 @@
   }
 
   [data-img="gyrosR"].show,
-  [data-img="picaR"].show {
+  [data-img="picaR"].show,
+  [data-img="ostaloR"].show {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
     transform: translate3d(0, 0, 0);
 
@@ -59,16 +58,111 @@
   }
 
   [data-img="gyrosR"].hide,
-  [data-img="picaR"].hide {
+  [data-img="picaR"].hide,
+  [data-img="ostaloR"].hide {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     transform: translate3d(0, 50%, 0);
   }
 
   [data-img="gyrosR"].initial,
-  [data-img="picaR"].initial {
+  [data-img="picaR"].initial,
+  [data-img="ostaloR"].initial {
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 
     transition: clip-path 0s cubic-bezier(0.55, 0.055, 0.675, 0.19),
       -webkit-clip-path 0s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  &__modal {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 50;
+    pointer-events: none;
+
+    &.active {
+      pointer-events: all;
+    }
+
+    .item-1,
+    .item-2 {
+      width: 50%;
+      height: 100vh;
+
+      position: fixed;
+      top: 0;
+      z-index: 50;
+
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition-duration: 0.6s;
+    }
+
+    .item-1.active,
+    .item-2.active {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .item-1.closed,
+    .item-2.closed {
+      transition-duration: 0s;
+    }
+
+    .item-1.closing {
+      transform: translate3d(0, -100%, 0);
+    }
+
+    .item-2.closing {
+      transform: translate3d(0, 100%, 0);
+    }
+
+    .item-1 {
+      left: 0;
+      background-color: $black;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: translate3d(0, 100%, 0);
+
+      .title {
+        @extend %title-44;
+        color: $vivid-vermilion;
+        margin-bottom: 4.8rem;
+      }
+
+      ul {
+        color: $white;
+        width: 47.6rem;
+        height: 34.9rem;
+        display: flex;
+        flex-direction: column;
+
+        li {
+          @extend %description-21;
+          line-height: 2;
+          display: flex;
+          justify-content: space-between;
+          align-items: baseline;
+
+          div {
+            margin: 0 0.5rem;
+          }
+        }
+      }
+    }
+
+    &__space-line {
+      border-bottom: 1px solid $white;
+      width: 100%;
+    }
+
+    .item-2 {
+      right: 0;
+      transform: translate3d(0, -100%, 0);
+
+      img {
+        height: 100vh;
+      }
+    }
   }
 }

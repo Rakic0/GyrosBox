@@ -1,0 +1,224 @@
+{
+  "gyros": [
+    {
+      "name": "Svinjski gyros standard",
+      "price": "580.00"
+    },
+    {
+      "name": "Pileći gyros standard",
+      "price": "520.00"
+    },
+    {
+      "name": "Mix gyros standard",
+      "price": "580.00"
+    },
+    {
+      "name": "Svinjski gyros kraljevski",
+      "price": "650.00"
+    },
+    {
+      "name": "Pileći gyros kraljevski",
+      "price": "600.00"
+    },
+    {
+      "name": "Mix gyros kraljevski",
+      "price": "650.00"
+    },
+    {
+      "name": "Svinjski gyros porcija box",
+      "price": "700.00"
+    },
+    {
+      "name": "Pileći gyros porcija box",
+      "price": "650.00"
+    },
+    {
+      "name": "Mix gyros porcija box",
+      "price": "700.00"
+    },
+    {
+      "name": "Dečiji gyros svinjski",
+      "price": "400.00"
+    },
+    {
+      "name": "Dečiji gyros pileći",
+      "price": "580.00"
+    },
+    {
+      "name": "Dečiji gyros mix",
+      "price": "400.00"
+    },
+    {
+      "name": "Dečija gyros porcija box",
+      "price": "450.00"
+    }
+  ],
+  "pica": [
+    {
+      "name": "Coca-Cola 0.5l",
+      "price": "130.00"
+    },
+    {
+      "name": "Coca-Cola zero 0.5l",
+      "price": "130.00"
+    },
+    {
+      "name": "Coca-Cola 0.33l",
+      "price": "100.00"
+    },
+    {
+      "name": "Coca-Cola zero 0.33l",
+      "price": "100.00"
+    },
+    {
+      "name": "Limunada",
+      "price": "70.00"
+    },
+    {
+      "name": "Fanta 0.5l",
+      "price": "130.00"
+    },
+    {
+      "name": "Fanta shokata 0.5l",
+      "price": "130.00"
+    },
+    {
+      "name": "Fanta tropic 0.5l",
+      "price": "120.00"
+    },
+    {
+      "name": "Fanta roze 0.5l",
+      "price": "120.00"
+    },
+    {
+      "name": "Fanta 0.33l",
+      "price": "100.00"
+    },
+    {
+      "name": "Fanta exotic 0.33l",
+      "price": "100.00"
+    },
+    {
+      "name": "Sprite 0.5l",
+      "price": "130.00"
+    },
+    {
+      "name": "Schweppes 0.5l",
+      "price": "130.00"
+    },
+    {
+      "name": "Schweppes 0.33l",
+      "price": "100.00"
+    },
+    {
+      "name": "Schweppes mohito 0.33l",
+      "price": "100.00"
+    },
+    {
+      "name": "Ultra 0.33l",
+      "price": "120.00"
+    },
+    {
+      "name": "Ultra 0.5l",
+      "price": "200.00"
+    },
+    {
+      "name": "Joy višnja 0.5l",
+      "price": "120.00"
+    },
+    {
+      "name": "Joy multivitamin 0.5l",
+      "price": "120.00"
+    },
+    {
+      "name": "Joy narandža 0.5l",
+      "price": "120.00"
+    },
+    {
+      "name": "Joy zova 0.5l",
+      "price": "120.00"
+    },
+    {
+      "name": "Rosa 0.5l",
+      "price": "80.00"
+    },
+    {
+      "name": "Rosa 0.33l",
+      "price": "70.00"
+    },
+    {
+      "name": "Rosa gazirana 0.5l",
+      "price": "90.00"
+    },
+    {
+      "name": "Bući bući",
+      "price": "70.00"
+    },
+    {
+      "name": "Zaječarsko pivo 0.5l",
+      "price": "140.00"
+    },
+    {
+      "name": "Amstel pivo 0.5l",
+      "price": "160.00"
+    },
+    {
+      "name": "Birra Moreti 0.5l",
+      "price": "180.00"
+    },
+    {
+      "name": "Heineken pivo 0.5l",
+      "price": "200.00"
+    },
+    {
+      "name": "Laško pivo 0.5l",
+      "price": "180.00"
+    }
+  ],
+  "ostalo": [
+    {
+      "name": "Pohovani kačkavalj",
+      "price": "350.00"
+    },
+    {
+      "name": "Pohovani kačkavalj box porcija",
+      "price": "400.00"
+    },
+    {
+      "name": "Dinosaurusi box porcija",
+      "price": "400.00"
+    },
+    {
+      "name": "Pileći nugget",
+      "price": "350.00"
+    },
+    {
+      "name": "Pileći nugget box porcija",
+      "price": "400.00"
+    },
+    {
+      "name": "Pohovana palačinka slatka",
+      "price": "150.00"
+    },
+    {
+      "name": "Pohovana palačinka slana",
+      "price": "150.00"
+    },
+    {
+      "name": "Zizu pileći štapići",
+      "price": "380.00"
+    },
+    {
+      "name": "Zizu pileći štapići porcija box",
+      "price": "450.00"
+    },
+    {
+      "name": "Pileći medaljoni",
+      "price": "350.00"
+    },
+    {
+      "name": "Pileći medaljoni box paket",
+      "price": "400.00"
+    }
+  ]
+}

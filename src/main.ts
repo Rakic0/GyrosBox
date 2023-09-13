@@ -4,6 +4,9 @@ import Lenis from "@studio-freight/lenis";
 import split from "./utils/split";
 import getRandomNumber from "./utils/randomNumber";
 
+// Data
+import data from "./utils/data.json";
+
 const lenis = new Lenis();
 
 lenis.on("scroll", (_e: WheelEvent) => {});
@@ -56,21 +59,20 @@ links.forEach((link) => {
 
   link.addEventListener("mouseenter", () => {
     const { topNumber, leftNumber } = getRandomPositions();
+    const elements = document.querySelectorAll(`[data-img="${attribute}"]`);
 
-    document
-      .querySelectorAll(`[data-img="${attribute}"]`)
-      .forEach((img, index: number) => {
-        img.classList.remove("hide", "initial");
-        img.classList.add("show");
-        if (attribute?.charAt(attribute.length - 1) === "R") {
-          // @ts-ignore
-          img.style.top = `${topNumber[index]}rem`;
-          // @ts-ignore
-          img.style.left = `${leftNumber[index]}rem`;
-          // @ts-ignore
-          img.style.transitionDelay = `${index * 0.1}s`;
-        }
-      });
+    elements.forEach((img, index: number) => {
+      img.classList.remove("hide", "initial");
+      img.classList.add("show");
+      if (attribute?.charAt(attribute.length - 1) === "R") {
+        // @ts-ignore
+        img.style.top = `${topNumber[index]}rem`;
+        // @ts-ignore
+        img.style.left = `${leftNumber[index]}rem`;
+        // @ts-ignore
+        img.style.transitionDelay = `${index * 0.1}s`;
+      }
+    });
   });
 
   link.addEventListener("mouseleave", () => {
@@ -80,6 +82,70 @@ links.forEach((link) => {
         img.classList.add("initial");
       }, 610);
     });
+  });
+});
+
+// Menu modal
+
+const menuLinks = document.querySelectorAll(".menu__link");
+const menu = document.querySelector(".menu");
+const menuItem1 = document.querySelector(".menu .item-1");
+const menuItem1Ul = document.querySelector(".menu .item-1 ul");
+const menuTitle = document.querySelector(".menu .title");
+const menuItem2 = document.querySelector(".menu .item-2");
+
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    const attribute = link.getAttribute("data-id")?.slice(0, -1);
+    let menuData: {
+      name: string;
+      price: string;
+    }[];
+
+    if (attribute === "gyros") {
+      menuData = data.gyros;
+      // @ts-ignore
+      menuTitle.textContent = "Gyros";
+    } else if (attribute === "pica") {
+      menuData = data.pica;
+      // @ts-ignore
+      menuTitle.textContent = "Pića";
+    } else if (attribute === "ostalo") {
+      menuData = data.ostalo;
+      // @ts-ignore
+      menuTitle.textContent = "Ostalo";
+    }
+
+    // @ts-ignore
+    menuData.forEach((item) => {
+      // const string = `${item.name} ${".".repeat(
+      //   68 - item.name.length - item.price.length
+      // )} ${item.price}`;
+
+      const elementLi = document.createElement("li");
+      const elementName = document.createElement("div");
+      const elementSpace = document.createElement("div");
+      const elementPrice = document.createElement("div");
+
+      elementName.textContent = item.name;
+      elementPrice.textContent = item.price;
+      elementSpace.textContent = "";
+
+      elementSpace.classList.add("menu__modal__space-line");
+      elementName.style.whiteSpace = "nowrap";
+
+      elementLi.appendChild(elementName);
+      elementLi.appendChild(elementSpace);
+      elementLi.appendChild(elementPrice);
+
+      menuItem1Ul?.appendChild(elementLi);
+
+      // console.log(string.length);
+    });
+
+    menu?.classList.add("active");
+    menuItem1?.classList.add("active");
+    menuItem2?.classList.add("active");
   });
 });
 
@@ -99,8 +165,8 @@ window.addEventListener("wheel", () => {
 
 const ham = document.querySelector(".ham");
 const navMenu = document.querySelector(".nav__menu");
-const item1 = document.querySelector(".item-1");
-const item2 = document.querySelector(".item-2");
+const item1 = document.querySelector(".nav__menu .item-1");
+const item2 = document.querySelector(".nav__menu .item-2");
 
 ham?.addEventListener("click", () => {
   ham.classList.toggle("active");
