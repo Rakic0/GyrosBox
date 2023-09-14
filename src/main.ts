@@ -283,7 +283,6 @@ if (screenWidth > 768) {
   track?.addEventListener("touchstart", (e) => {
     // @ts-ignore
     track.dataset.mouseDownAt = e.touches[0].clientX;
-    console.log(e);
   });
 
   track?.addEventListener("touchmove", (e) => {
