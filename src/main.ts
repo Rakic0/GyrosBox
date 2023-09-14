@@ -243,7 +243,7 @@ if (screenWidth > 768) {
     threshold: 0.5,
   };
 
-  let callback = (entries: any[], observer: any) => {
+  let callback = (entries: any[], _observer: any) => {
     entries.forEach((entry: any) => {
       if (entry.isIntersecting) {
         // @ts-ignore
@@ -320,7 +320,7 @@ if (screenWidth > 768) {
     }
   });
 
-  track?.addEventListener("touchend", (e) => {
+  track?.addEventListener("touchend", (_e) => {
     // @ts-ignore
     track.dataset.mouseDownAt = "0";
     // @ts-ignore
