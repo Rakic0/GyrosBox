@@ -1,32 +1,72 @@
 .slider {
   background-color: $white;
-  height: 100vh;
   width: 100%;
-  overflow: hidden;
+  height: auto;
   display: flex;
 
-  .item-1 {
-    width: 100vw;
+  @media only screen and (max-width: 64em) {
+    position: relative;
+    overflow: hidden;
+    height: 115vmin;
+  }
 
+  .item-1 {
+    width: 50vw;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+
+    @media only screen and (max-width: 64em) {
+      display: flex;
+      gap: 4vmin;
+      position: absolute;
+      bottom: 1.5rem;
+      user-select: none;
+    }
 
     img {
       display: block;
-      width: 50vw;
+      width: 100%;
+      height: 90rem;
+      object-fit: cover;
+
+      &:last-of-type {
+        display: none;
+      }
+
+      @media only screen and (max-width: 64em) {
+        object-position: 100% center;
+        width: 26rem;
+        height: 40vmin;
+
+        &:last-of-type {
+          display: block;
+        }
+      }
     }
   }
 
   .item-2 {
     padding: 0 19rem;
-    position: relative;
+    width: 50vw;
+    pointer-events: none;
+
+    @media only screen and (max-width: 64em) {
+      height: 100vh;
+      width: 100vw;
+      padding: 0 5rem;
+    }
 
     div {
-      height: 100vh;
+      margin: 0 auto;
+      margin-top: 20rem;
+      margin-bottom: 29rem;
+      position: sticky;
+      top: 40%;
       width: 47.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+
+      @media only screen and (max-width: 64em) {
+        margin: 7rem auto 10rem auto;
+        position: static;
+      }
 
       h3 {
         @extend %title-44;
@@ -34,12 +74,14 @@
         color: $vivid-vermilion;
         margin-bottom: 4.2rem;
         text-align: center;
+        transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       }
 
       p {
         @extend %description-21;
         color: $black;
-        text-align: left;
+        text-align: justify;
+        transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       }
     }
   }

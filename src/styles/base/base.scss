@@ -5,7 +5,20 @@
 }
 
 ::-webkit-scrollbar {
+  width: 1rem;
+}
+
+body::-webkit-scrollbar {
   display: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $dreamless-sleep;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $jet;
+  border-radius: 0.5rem;
 }
 
 html {

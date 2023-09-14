@@ -100,6 +100,7 @@
   .item-2 {
     width: 50%;
     height: 100vh;
+    opacity: 0;
 
     position: fixed;
     top: 0;
@@ -112,6 +113,7 @@
   .item-1.active,
   .item-2.active {
     transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 
   .item-1.closed,
@@ -121,6 +123,7 @@
 
   .item-1.closing {
     transform: translate3d(0, -100%, 0);
+    opacity: 0;
   }
   .item-2.closing {
     transform: translate3d(0, 100%, 0);
@@ -130,7 +133,7 @@
     left: 0;
 
     @media only screen and (max-width: 48em) {
-      width: 100%;
+      width: 100vw;
     }
 
     background-color: $dreamless-sleep;
