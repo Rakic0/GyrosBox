@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  width: 100%;
+  width: 100vw;
   height: 7.5rem;
   background-color: transparent;
   border-bottom: 1px solid transparent;
@@ -19,6 +19,11 @@
   & div:last-child {
     width: 1.6rem;
     height: 1.6rem;
+
+    @media only screen and (max-width: 35em) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 
   &__logo {
@@ -47,6 +52,11 @@
   -ms-user-select: none;
   user-select: none;
   width: 3.5rem;
+
+  @media only screen and (max-width: 35em) {
+    width: 4rem;
+    height: 4rem;
+  }
 
   position: fixed;
   z-index: 102;
