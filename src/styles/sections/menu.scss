@@ -24,6 +24,9 @@
 
   & .mini__title {
     margin-bottom: 2rem;
+    @media only screen and (max-width: 48em) {
+      margin-bottom: 0;
+    }
   }
 
   & a.link {
@@ -142,8 +145,13 @@
           left: 2.7%;
         }
 
-        @media only screen and (max-width: 46.87em) {
-          top: 6%;
+        @media only screen and (max-width: 37em) {
+          top: 13%;
+          left: 3.6%;
+        }
+
+        @media only screen and (max-width: 24em) {
+          top: 7%;
         }
       }
 

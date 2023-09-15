@@ -4,17 +4,23 @@
   height: auto;
   display: flex;
 
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 48em) {
     position: relative;
     overflow: hidden;
-    height: 115vmin;
+    height: 90vmin;
+  }
+
+  @media only screen and (max-width: 37em) {
+    position: relative;
+    overflow: hidden;
+    height: 130vmin;
   }
 
   .item-1 {
     width: 50vw;
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 
-    @media only screen and (max-width: 64em) {
+    @media only screen and (max-width: 48em) {
       display: flex;
       gap: 4vmin;
       position: absolute;
@@ -33,6 +39,12 @@
       }
 
       @media only screen and (max-width: 64em) {
+        &:nth-child(3) {
+          object-position: 20%;
+        }
+      }
+
+      @media only screen and (max-width: 48em) {
         object-position: 100% center;
         width: 26rem;
         height: 40vmin;
@@ -45,14 +57,18 @@
   }
 
   .item-2 {
-    padding: 0 19rem;
+    padding: 10rem 19rem;
     width: 50vw;
     pointer-events: none;
 
     @media only screen and (max-width: 64em) {
+      padding: 5rem 4rem;
+    }
+
+    @media only screen and (max-width: 48em) {
       height: 100vh;
       width: 100vw;
-      padding: 0 5rem;
+      padding: 0 rem;
     }
 
     div {
@@ -60,12 +76,24 @@
       margin-top: 20rem;
       margin-bottom: 29rem;
       position: sticky;
-      top: 40%;
+      top: 50%;
+      transform: translateY(-50%);
       width: 47.6rem;
 
       @media only screen and (max-width: 64em) {
-        margin: 7rem auto 10rem auto;
+        width: auto;
+      }
+
+      @media only screen and (max-width: 48em) {
+        margin: 7rem auto;
         position: static;
+        transform: translateY(0);
+        width: 70%;
+      }
+
+      @media only screen and (max-width: 37em) {
+        width: 100%;
+        margin: 0 auto;
       }
 
       h3 {

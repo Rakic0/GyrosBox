@@ -146,20 +146,17 @@
 
     & div:nth-child(1) {
       margin-bottom: 1rem;
+
+      @media only screen and (max-width: 48em) {
+        margin-bottom: 2rem;
+      }
     }
 
     .mini__title {
       margin-bottom: 2rem;
 
       @media only screen and (max-width: 48em) {
-        font-size: 2.2rem;
-        margin-bottom: 4rem;
-      }
-    }
-
-    .link {
-      @media only screen and (max-width: 48em) {
-        font-size: 6.4rem;
+        margin-bottom: 0rem;
       }
     }
   }

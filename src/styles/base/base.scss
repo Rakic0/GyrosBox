@@ -22,14 +22,18 @@ body::-webkit-scrollbar {
 }
 
 html {
-  font-size: calc(100vw / 1920 * 10);
+  font-size: calc(100vw / 3440 * 10);
+
+  @media only screen and (max-width: 120em) {
+    font-size: calc(100vw / 1920 * 10);
+  }
 
   @media only screen and (max-width: 64em) {
     font-size: calc(100vw / 1024 * 10);
   }
 
-  @media only screen and (max-width: 46.87em) {
-    font-size: calc(100vw / 750 * 10);
+  @media only screen and (max-width: 37em) {
+    font-size: calc(100vw / 600 * 10);
   }
 }
 

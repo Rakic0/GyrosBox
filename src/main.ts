@@ -275,7 +275,7 @@ if (screenWidth > 768) {
 } else {
   sliderTitle?.replaceChildren("Hiljade zadovoljnih mušterija");
   sliderDescription?.replaceChildren(
-    "Hiljade zadovoljnih gostiju su uživali u našim ukusnim girosima, uživajući u savršenoj kombinaciji nežnog, začinjenog mesa, svežeg povrća i kremastog tzatziki sosa. Naša posvećenost kulinarističkoj izvrsnosti i zadovoljstvu gostiju sjaji u svakom zalogaju. Od naše prijateljske usluge do naših ukusnih girosa, ponosimo se što premašujemo očekivanja. Pridružite se redovima naših zadovoljnih posetilaca i uživajte u giros iskustvu kao nikada ranije. Vaše poverenje pokreće našu strast i jedva čekamo da vas poslužimo sa istom posvećenošću koja je obradovala hiljade."
+    "Preko hiljadu zadovoljnih gostiju su uživali u našoj savršenoj kombinaciji sočnog, začinjenog mesa, svežeg povrća i kremastog tzatziki sosa. Naša posvećenost kulinarstvu i zadovoljstvu naših gostiju sjaji u svakom zalogaju. Od naše prijateljske usluge do naših ukusnih gyros-a, ponosimo se što premašujemo svačija očekivanja. Uživajte u gyros iskustvu kao nikada ranije. Vaše poverenje pokreće našu strast i jedva čekamo da Vas poslužimo sa istom posvećenošću koja je obradovala hiljade. Pridružite nam se i postanite jedan od naših zadovoljnih posetilaca!"
   );
 
   const track = document.querySelector(".slider .item-1");
