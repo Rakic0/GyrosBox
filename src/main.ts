@@ -115,17 +115,26 @@ menuLinks.forEach((link) => {
       menuData = data.gyros;
       // @ts-ignore
       menuTitle.textContent = "Gyros";
-      menuImg?.setAttribute("src", "/src/images/menu/menuGyros.webp");
+      menuImg?.setAttribute(
+        "src",
+        "https://i.postimg.cc/mkqcN0My/menu-Gyros.webp"
+      );
     } else if (attribute === "pica") {
       menuData = data.pica;
       // @ts-ignore
       menuTitle.textContent = "Pića";
-      menuImg?.setAttribute("src", "/src/images/menu/menuPica.webp");
+      menuImg?.setAttribute(
+        "src",
+        "https://i.postimg.cc/RFYCjwFM/menuPica.webp"
+      );
     } else if (attribute === "ostalo") {
       menuData = data.ostalo;
       // @ts-ignore
       menuTitle.textContent = "Ostalo";
-      menuImg?.setAttribute("src", "/src/images/menu/ostalo (3).webp");
+      menuImg?.setAttribute(
+        "src",
+        "https://i.postimg.cc/59H8j38S/ostalo-3.webp"
+      );
     }
 
     // @ts-ignore
