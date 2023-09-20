@@ -96,13 +96,12 @@
       position: fixed;
       top: 0;
       z-index: 50;
-
-      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-      transition-duration: 0.6s;
     }
 
     .item-1.active,
     .item-2.active {
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition-duration: 0.6s;
       transform: translate3d(0, 0, 0);
       opacity: 1;
     }
@@ -110,6 +109,12 @@
     .item-1.closed,
     .item-2.closed {
       transition-duration: 0s;
+    }
+
+    .item-1.closing,
+    .item-2.closing {
+      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+      transition-duration: 0.6s;
     }
 
     .item-1.closing {
