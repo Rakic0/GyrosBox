@@ -49,8 +49,8 @@ if (!window.matchMedia("(pointer:coarse)").matches) {
   // Image animations
 
   const getRandomPositions = () => {
-    const top = { min: 10, max: 50, diff: 20 };
-    const left = { min: 10, max: 100, diff: 15 };
+    const top = { min: 10, max: window.innerHeight - 400, diff: 20 };
+    const left = { min: 10, max: window.innerWidth - 400, diff: 250 };
 
     const topNumber = getRandomNumber(top);
     const leftNumber = getRandomNumber(left);
@@ -61,28 +61,40 @@ if (!window.matchMedia("(pointer:coarse)").matches) {
     };
   };
 
+  let isMouseOver = false;
+
   links.forEach((link) => {
     const attribute = link.getAttribute("data-id");
 
     link.addEventListener("mouseenter", () => {
-      const { topNumber, leftNumber } = getRandomPositions();
-      const elements = document.querySelectorAll(`[data-img="${attribute}"]`);
+      isMouseOver = true;
 
-      elements.forEach((img, index: number) => {
-        img.classList.remove("hide", "initial");
-        img.classList.add("show");
-        if (attribute?.charAt(attribute.length - 1) === "R") {
-          // @ts-ignore
-          img.style.top = `${topNumber[index]}rem`;
-          // @ts-ignore
-          img.style.left = `${leftNumber[index]}rem`;
-          // @ts-ignore
-          img.style.transitionDelay = `${index * 0.1}s`;
+      setTimeout(() => {
+        if (isMouseOver) {
+          const { topNumber, leftNumber } = getRandomPositions();
+          const elements = document.querySelectorAll(
+            `[data-img="${attribute}"]`
+          );
+
+          elements.forEach((img, index: number) => {
+            img.classList.remove("hide", "initial");
+            img.classList.add("show");
+            if (attribute?.charAt(attribute.length - 1) === "R") {
+              // @ts-ignore
+              img.style.top = `${topNumber[index]}px`;
+              // @ts-ignore
+              img.style.left = `${leftNumber[index]}px`;
+              // @ts-ignore
+              img.style.transitionDelay = `${index * 0.1}s`;
+            }
+          });
         }
-      });
+      }, 1000);
     });
 
     link.addEventListener("mouseleave", () => {
+      isMouseOver = false;
+
       document.querySelectorAll(`[data-img="${attribute}"]`).forEach((img) => {
         img.classList.replace("show", "hide");
         setTimeout(() => {
@@ -102,6 +114,7 @@ const menuItem1Ul = document.querySelector(".menu__modal .item-1 ul");
 const menuTitle = document.querySelector(".menu__modal .title");
 const menuItem2 = document.querySelector(".menu__modal .item-2");
 const menuImg = document.querySelector(".menu__modal .item-2 img");
+const menuImgDiv = document.querySelector(".menu__modal .item-2 .blur-load");
 
 menuLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -115,14 +128,22 @@ menuLinks.forEach((link) => {
       menuData = data.gyros;
       // @ts-ignore
       menuTitle.textContent = "Gyros";
+      menuImgDiv?.setAttribute(
+        "style",
+        "background-image: url(https://i.postimg.cc/43NczP9n/menu-Gyros-small.webp)"
+      );
       menuImg?.setAttribute(
         "src",
-        "https://i.postimg.cc/mkqcN0My/menu-Gyros.webp"
+        "https://i.postimg.cc/mkqcN0My/menu-Gyros.webpp"
       );
     } else if (attribute === "pica") {
       menuData = data.pica;
       // @ts-ignore
       menuTitle.textContent = "Pića";
+      menuImgDiv?.setAttribute(
+        "style",
+        "background-image: url(https://i.postimg.cc/kGkGzFGN/menu-Pica-small.webp)"
+      );
       menuImg?.setAttribute(
         "src",
         "https://i.postimg.cc/RFYCjwFM/menuPica.webp"
@@ -131,6 +152,10 @@ menuLinks.forEach((link) => {
       menuData = data.ostalo;
       // @ts-ignore
       menuTitle.textContent = "Ostalo";
+      menuImgDiv?.setAttribute(
+        "style",
+        "background-image: url(https://i.postimg.cc/j51SnQHV/ostalo-3-small.webp)"
+      );
       menuImg?.setAttribute(
         "src",
         "https://i.postimg.cc/59H8j38S/ostalo-3.webp"
@@ -229,13 +254,17 @@ const closeNavigation = () => {
 navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     // @ts-ignore
-    if (!e.target.dataset.id) return;
+    const link = e.target.closest(".link");
+
+    // @ts-ignore
+    if (!link.dataset.id) return;
 
     closeNavigation();
     // @ts-ignore
     lenis.scrollTo(document.getElementById(link.dataset.id));
   });
 });
+
 ham?.addEventListener("click", closeNavigation);
 
 // Slider

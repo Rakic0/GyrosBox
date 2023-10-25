@@ -7,6 +7,8 @@ a.link {
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  position: relative;
+  z-index: 100;
 
   @media (pointer: "coarse") {
     line-height: 2;
